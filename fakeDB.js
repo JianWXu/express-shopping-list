@@ -1,3 +1,3 @@
-global.items = []
+global.items = [{ name: "gummybear" }, { name: "chocolate" }];
 
-module.exports = items
+module.exports = items;
