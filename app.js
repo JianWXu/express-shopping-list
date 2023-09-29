@@ -4,17 +4,16 @@ const router = require("./routers");
 
 const app = express();
 const items = require("./fakeDB");
-const e = require("express");
 
 app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
 
 // directory for /item routers
 app.use("/items", router);
 
+// 404 handler
+
 app.use(function (req, res, next) {
-  const notFoundError = new ExpressError("Not Found", 404);
-  return notFoundError;
+  return new ExpressError("Not Found", 404);
 });
 
 app.use(function (error, req, res, next) {
